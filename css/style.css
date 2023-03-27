@@ -3,71 +3,77 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+ 
+}
 
 li {
     list-style: none;
 }
-img{
-   width: 256px;
-}
-
-.main {
-    background-color: rgb(172, 250, 172);
-   margin-left: 180px;
-    width: 1200px;
-    height: 400px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.slider__prev{
-    position: absolute;
-    left: 0;
-    background-color: white;
-    border: none;
-}
-.slider__next{
-    
-    background-color: white;
-    border: none;
-}
-button {
-    background: none;
-    border: 1px solid black;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: .9rem;
-    transition: .5s;
-    margin: 0 25px 0 25px;
-}
-button:hover {
-    background: rgb(0, 255, 115);
-    
-    
-}
-
-button:active {
-    background: #000;
-    color: #fff;
-}
 .slider {
-    border: 2px solid black;
-    width: 256px;
-    height: 256px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider__line {
-    width: 1024px;
-    height: 256px;
-    display: flex;
-    background: rgb(14, 13, 13);
+    margin: 0 auto;
+    margin-top: 250px;
     position: relative;
-   
-    transition: 1s;
-}
-
+    width: 700px;
+    height: 300px;
+    overflow: hidden;
+    
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 3s ease;
+    z-index: 1;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  #prevBtn{
+    position: absolute;
+    top: 150px;
+    border: none;
+    padding: 7px 10px;
+    margin-left: 15px;
+    border-radius: 3px;
+    opacity: .7;
+    z-index: 11;
+  }
+  #nextBtn{
+    position: absolute;
+    right: 0;
+    top: 150px;
+    border: none;
+    padding: 7px 10px;
+    margin-right: 15px;
+    border-radius: 3px;
+    opacity: .7;
+    transition: .4s;
+    z-index: 11;
+  }
+  #nextBtn:hover{
+    opacity: 1;
+  }
+  #prevBtn:hover{
+    opacity: 1;
+  }
+  .pagination span{
+    z-index: 10;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .pagination{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 190%;
+  }

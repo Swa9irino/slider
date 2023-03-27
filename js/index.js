@@ -1,18 +1,20 @@
-let displacement = 0;
-const sliderLine = document.querySelector('.slider__line');
+let slides = document.querySelectorAll('.slide');
+let nextBtn = document.getElementById('nextBtn');
 
-document.querySelector('.slider__next').addEventListener('click', function(){
-    displacement +=  256;
-    if (displacement > 768) {
-        displacement = 0;
-    }
-    sliderLine.style.left = -displacement + 'px';
-});
+let prevBtn = document.getElementById('prevBtn');
+let currentSlide = 0;
 
-document.querySelector('.slider__prev').addEventListener('click', function () {
-    displacement -=256;
-    if (displacement < 0) {
-        displacement = 768;
-    }
-    sliderLine.style.left = -displacement + 'px';
+function showSlide(mySlide) {
+  slides[currentSlide].classList.remove('active');
+
+  currentSlide = (mySlide + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+nextBtn.addEventListener('click', function() {
+  showSlide(currentSlide + 1);
 });
+prevBtn.addEventListener('click', function() {
+    showSlide(currentSlide - 1);
+  });
+console.log(slides)
